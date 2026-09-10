@@ -3,10 +3,11 @@ from random import choice
 
 class Hangman:
     """Class to represent the Hangman game."""
+    LIVES = 7
     def __init__(self, word_list, num_lives=7):
         self.board = {}
         self.word_list = word_list
-        self.num_lives = num_lives
+        self.num_lives = self.LIVES
         self.word = choice(self.word_list)
         self.word_guessed = ['_'] * len(self.word)
         self.num_letters = len(set(self.word))
