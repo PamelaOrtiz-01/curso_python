@@ -1,4 +1,5 @@
 """ Functions for the Hangman game """
+from pathlib import Path
 from random import choice
 import os
 
@@ -98,4 +99,11 @@ class Hangman:
             if play_again == y:
                 self.restart_game()
                 continue
-            break            
+            break
+
+if __name__ == "__main__":
+    word_list = ["python", "hangman", "challenge", "programming", "function", "variable", 
+                 "loop", "condition", "class", "object"]
+    game =  Hangman(word_list)
+    game.load_board()
+    game.play()          
