@@ -46,15 +46,30 @@ class Hangman:
 
     def game_won(self):
         """Return True when the player has guessed the entire word."""
-        
-
+        return (self.num_letters == 0)
 
     def game_lost(self):
         """Return True when the player has no lives left."""
-
+        return (self.num_lives == 0)
 
     def check_guess(self, guess:str):
         """Check if the guessed letter is in the word."""
+        guess = guess.strip().lower()
+        if len(guess) != 1 or not guess.isalpha():
+            return "Invalid input. Please enter a single alphabetical character."
+        if guess in self.list_of_guesses:
+            return f"You have already guessed '{guess}'. Try a different letter."
+        if guess in self.word:
+            for i, letter in enumerate(self.word):
+                if letter == guess:
+                    self.word_guessed[i] = guess
+            self.num_letters -= 1
+            message = f"Good guess! '{guess}' is in the word."
+        else:
+            self.num_lives -= 1
+            message = f"Sorry, '{guess}' is not in the word."
+        self.list_of_guesses.append(guess)
+        return message
 
 
     def submit_guess(self, guess: str):
