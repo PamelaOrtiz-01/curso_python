@@ -71,14 +71,31 @@ class Hangman:
         self.list_of_guesses.append(guess)
         return message
 
-
     def submit_guess(self, guess: str):
         """Apply a terminal guess and return the resulting message."""
-
+        message = self.check_guess(guess)
+        if self.game_won():
+            message += "\nCongratulations! You've guessed the word!."
+        elif self.game_lost():
+            message += f"\nGame Over! The word was '{self.word}'."
+        return message
 
     def restart_game(self):
         """Restart the terminal game."""
-
+        self.reset_game()
+        self.refresh_view("Game restarted! A new word has been chosen.")
 
     def play(self):
         """Run the hangman game loop in the terminal."""
+        self.refresh_view("Try to guess the word! Type a letter and press enter.")
+        while True:
+            guess = input("Enter a letter: ")
+            message = self.submit_guess(guess)
+            self.refresh_view(message)
+            if not (self.game_won() or self.game_lost()):
+                continue
+            play_again = input("Do you want to ply again? (y/n): ").strip().lower()
+            if play_again == y:
+                self.restart_game()
+                continue
+            break            
