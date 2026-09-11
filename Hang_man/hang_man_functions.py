@@ -40,10 +40,13 @@ class Hangman:
 
     def refresh_view(self, message: str | None = None):
         """Render the current terminal state of the game."""
-
+        self.display_board()
+        if message is not None:
+            print(message)
 
     def game_won(self):
         """Return True when the player has guessed the entire word."""
+        
 
 
     def game_lost(self):
