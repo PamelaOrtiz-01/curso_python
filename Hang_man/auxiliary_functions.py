@@ -52,5 +52,11 @@ if __name__ == "__main__":
     reduced_words = reduce_list_of_words(cleaned_words,4)
     
     print(reduced_words)
+    word_dict = count_words(cleaned_words)
+    # Print the top most common words
+    top_ten_words = sorted(word_dict.items(), key=lambda x: x[1], reverse=True) [:10]
+    print("Top ten most common words:")
+    for word, count in top_ten_words:
+        print(f"{word}: {count}")
     print("Number of words in the reduced list:", len(reduced_words))
     save_words_to_file(reduced_words, "dracula_words.txt")
