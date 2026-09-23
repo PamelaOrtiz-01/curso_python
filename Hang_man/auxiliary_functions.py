@@ -29,6 +29,16 @@ def reduce_list_of_words(word_list:list, min_length:int=3) -> list:
     reduced_words = list(word_set)
     return reduced_words
 
+def count_words(word_list:list) -> dict:
+    """Count the occurrences of each word in a list and return a dictionary."""
+    word_count = {}
+    for word in word_list:
+        if word in word_count:
+            word_count[word] += 1
+        else:
+            word_count[word] = 1
+    return word_count    
+
 if __name__ == "__main__":
     # Example usage
     book_path = "Dracula.txt"
