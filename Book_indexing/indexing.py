@@ -7,13 +7,53 @@ import itertools
 from auxiliary_functions import list_directory_files, load_book, clean_list_of_words, reduce_list_of_words, count_words   
 
 def compute_tf(word_count, total_words):
-    """Compute the term frequency (TF) for a word in a document."""
+    """ Compute the term frequency (TF) for a word in a document. """
     if total_words == 0:
-        return{}
+        return {}
     dict_tf = {}
     for word, count in word_count.items():
         dict_tf[word] = count / total_words
     return dict_tf
+
+def compute_idf(documents):
+    '''
+        Compute inverse document frequency
+        usage: idf = compute_idf(a_dictionary_list)
+    '''
+    N = len(documents)
+    idf_dictionary = dict.fromkeys(documents[0].keys(),0)
+    print("Dictionary length:",len(idf_dictionary))
+    
+    dictionary_list = [list(dictionary.keys()) for dictionary in documents]
+    key_list = list(itertools.chain(*dictionary_list))
+    print("List length:",len(key_list))
+    idf_dictionary = dict.fromkeys(key_list,0)
+    print("Dictionary length:",len(idf_dictionary))
+    for dictionary in documents:
+        for word, valor in dictionary.items():
+            if valor > 0:
+                if word in idf_dictionary:
+                    idf_dictionary[word] += 1
+                else:
+                    idf_dictionary[word] = 1
+    for word, valor in idf_dictionary.items():
+        idf_dictionary[word] = math.log(N/float(valor))
+    return idf_dictionary
+
+def compute_tf_idf(tf:dict, idfs:dict) -> dict:
+    '''
+        Computes Term-Frequency-Inverse Document Frequency (TF-IDF) for all documents.
+        usage: tfidf_book = compute_tf_idf(book_tf, idfs)
+        Returns a dictionary with the TF-IDF of the book.
+        Computes Term-Frequency-Inverse Document Frequency
+        for all documents
+        usage: tfidf_book = compute_tf_idf(book_tf, idfs)
+        Returns a dictionary with the TF-IDF of the book.
+    '''
+    tfidf = dict()
+    for word, value in tf.items():
+        tfidf[word] = value * idfs[word]
+    return tfidf
 
 def main(args):
     book_path = args.book_path
@@ -43,8 +83,9 @@ def main(args):
         print(f"Unique words: {len(word_count)}")
         print(f"Term Frequencies:")
         for word, tf in tf_dict.items():
-            if tf >=0.0001: # Only print words with a non-zero frequency
-                print(f" {word}: {tf:.4f}")
+            if tf >=0.0001:  # Only print words with a non-zero frequency
+                print(f"  {word}: {tf:.4f}")
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Index books.")
