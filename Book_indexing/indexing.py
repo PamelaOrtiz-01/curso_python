@@ -15,6 +15,7 @@ def compute_tf(word_count, total_words):
         dict_tf[word] = count / total_words
     return dict_tf
 
+
 def compute_idf(documents):
     '''
         Compute inverse document frequency
