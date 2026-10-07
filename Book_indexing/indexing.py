@@ -56,6 +56,23 @@ def compute_tf_idf(tf:dict, idfs:dict) -> dict:
         tfidf[word] = value * idfs[word]
     return tfidf
 
+def book_indexing(dictionary_of_books:dict) -> dict:
+    """ Indexes the books and computes TF, IDF, and TF-IDF. """
+    tf_dict = {}
+    for book_name, words in dictionary_of_books.items():
+        cleaned_words = clean_list_of_words(words)
+        word_count = count_words(cleaned_words)
+        total_words = len(cleaned_words)
+        tf_dict[book_name] = compute_tf(word_count, total_words)
+
+    idf_dict = compute_idf(list(tf_dict.values()))
+
+    tfidf_dict = {}
+    for book_name, tf in tf_dict.items():
+        tfidf_dict[book_name] = compute_tf_idf(tf, idf_dict)
+
+    return tfidf_dict
+
 def main(args):
     book_path = args.book_path
     book_dictionary = {}
