@@ -15,11 +15,10 @@ def compute_tf(word_count, total_words):
         dict_tf[word] = count / total_words
     return dict_tf
 
-
 def compute_idf(documents):
     '''
-        Compute inverse document frequency
-        usage: idf = compute_idf(a_dictionary_list)
+        Compute the Inverse Document Frequency (IDF) for each word in the documents.
+        usage: idf = compute_idf(list_of_dictionaries)
     '''
     N = len(documents)
     idf_dictionary = dict.fromkeys(documents[0].keys(),0)
@@ -73,7 +72,9 @@ def book_indexing(dictionary_of_books:dict) -> dict:
 
     return tfidf_dict
 
+
 def main(args):
+    """ Main function to index books. """
     book_path = args.book_path
     book_dictionary = {}
     if not os.path.exists(book_path):
@@ -90,7 +91,15 @@ def main(args):
                 book_dictionary[file] = load_book(os.path.join(book_path, file))
     else:
         print(f"Error: The path '{book_path}' is neither a file nor a directory.")
-    print(book_dictionary.keys())
+    #print(book_dictionary.keys())
+    tfidf_dict = book_indexing(book_dictionary)
+    print("TF-IDF Dictionary:", tfidf_dict.keys())
+    word_to_check = "dracula"
+    print(f"TF-IDF for '{word_to_check}':")
+    for book_name, tfidf in tfidf_dict.items():
+        if word_to_check in tfidf:
+            print(f"Book: {book_name}, TF-IDF for '{word_to_check}': {tfidf[word_to_check]:.6f}")
+    """
     for book_name, words in book_dictionary.items():
         cleaned_words = clean_list_of_words(words)
         word_count = count_words(cleaned_words)
@@ -103,7 +112,7 @@ def main(args):
         for word, tf in tf_dict.items():
             if tf >=0.0001:  # Only print words with a non-zero frequency
                 print(f"  {word}: {tf:.4f}")
-
+    """
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Index books.")
