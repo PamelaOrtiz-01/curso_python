@@ -23,7 +23,7 @@ def clean_list_of_words(word_list:list) -> list:
     cleaned_words = []
     # my code to clean the word list
     for word in word_list[0:]:
-        word = word.lower().strip(".,!?;:\"'()[]{}1234567890")
+        word = word.lower().strip(".,!?;:\"'()[]{}1234567890*+-=<>@#$%^&_|~`")
         #print(word)
         cleaned_words.append(word)
     return cleaned_words

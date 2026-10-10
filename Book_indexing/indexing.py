@@ -92,13 +92,44 @@ def main(args):
     else:
         print(f"Error: The path '{book_path}' is neither a file nor a directory.")
     #print(book_dictionary.keys())
+    word_to_check = args.word_to_check
+    result_list = search_word(book_dictionary, word_to_check)
+    top_words_by_book = most_frequent_words(book_dictionary)
+    for book, tfidf in result_list:
+        print(f"Book: {book}, TF-IDF for '{word_to_check}': {tfidf:.6f}")    
+    for book_name, top_words in top_words_by_book:
+        print(f"Top 10 words in '{book_name}':")
+        for word, score in top_words:
+            print(f"  {word} - TF-IDF: {score:.6f}")
+
+def search_word(book_dictionary: dict, word: str)->list:
+    """ Search for a word in the book dictionary and return a list of books containing the word """
     tfidf_dict = book_indexing(book_dictionary)
     print("TF-IDF Dictionary:", tfidf_dict.keys())
-    word_to_check = "dracula"
-    print(f"TF-IDF for '{word_to_check}':")
+    print(f"TF-IDF for '{word}':")
+    result_dict = {}
     for book_name, tfidf in tfidf_dict.items():
-        if word_to_check in tfidf:
-            print(f"Book: {book_name}, TF-IDF for '{word_to_check}': {tfidf[word_to_check]:.6f}")
+        if word in tfidf:
+            result_dict[book_name] = tfidf[word]
+    sorted_results = sorted(result_dict.items(), key=lambda x: x[1], reverse=True)
+    return sorted_results
+            #print(f"Book: {book_name}, TF-IDF for '{word_to_check}': {tfidf[word_to_check]:.6f}")
+            
+def most_frequent_words(book_dictionary: dict):
+    """Return the 10 highest TF-IDF words for each book."""
+    if not book_dictionary:
+        return []
+
+    tfidf_by_book = book_indexing(book_dictionary)
+    return [
+        (book_name, sorted(tfidf.items(), key=lambda item: (-item[1], item[0]))[:10])
+        for book_name, tfidf in tfidf_by_book.items()
+    ]
+        
+    """
+    if "dracula" in D:
+        print(f"TF-IDF for 'dracula': {D['dracula']}")
+    """
     """
     for book_name, words in book_dictionary.items():
         cleaned_words = clean_list_of_words(words)
@@ -116,6 +147,7 @@ def main(args):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Index books.")
-    parser.add_argument("book_path", type=str, help="Path to the books text files.")
+    parser.add_argument("book_path", type=str, help="Path to the books text files.", default="texts")
+    parser.add_argument("word_to_check", type=str, help="Word to check TF-IDF for.", default="dracula")
     args = parser.parse_args()
     main(args)
