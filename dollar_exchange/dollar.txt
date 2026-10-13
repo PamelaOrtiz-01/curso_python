@@ -1,0 +1,152 @@
+Dólar hoy en México - Tipo de cambio actual
+ElDolar.info
+Agregar a Chrome
+Histórico
+Selecciona un día
+Hoy
+Lunes 12 de Octubre de 2026
+el tipo de cambio promedio del dólar en México es de
+1
+Dólar =
+18.236
+Pesos
+⇩ -0.0209 -0.11%
+Compra
+18.0205
+Venta
+18.4515
+Día Hábil Bancario
+En La
+Semana
+⇩ -0.02 -0.11%
+En El
+Mes
+⇧ 0.26 1.47%
+En El
+Trimestre
+⇧ 0.26 1.47%
+En El
+Año
+⇧ 0.31 1.72%
+Con
+Biden
+⇩ -1.38 -7.04%
+Con
+AMLO
+⇩ -1.86 -9.23%
+Anuncios
+Día -1
+Día de ayer
+Calculadora
+El Financiero:
+Rescate de AHMSA requiere 3 mil mdd y 15 años; ‘el gobierno debe intervenir’: Napoleón Gómez Urrutia
+El Financiero:
+Wall Street abre mixto en espera de reportes corporativos en EU: ¿Cómo operan sus acciones?
+El Financiero:
+‘Día de la Raza’ empuja al peso y se recupera: ¿Cuánto gana frente al dólar HOY 12 de octubre?
+El Financiero:
+Nobel de Economía 2026: Premian a estadounidenses por modelo que enfrenta crisis económica e inflación
+El Financiero:
+Una llamada de 30,000 millones de dólares
+El Financiero:
+Erosión del carry trade le pega al peso mexicano: Diferencial de tasas entre México y EU dispara al dólar
+Multiplica
+Compra
+Venta
+Convertir
+Por
+USD
+Dólares
+=
+MXN
+Pesos
+1
+USD =
+MXN
+Tabla comparativa del precio de la moneda dólar en pesos publicados hoy por bancos y entidades de gobierno mexicano.
+Entidad
+Dólares
+Pesos
+Compra
+Venta
+Afirme
+17.40
+19.00
+Banco Azteca
+17.10
+18.79
+Banco de México, FIX
+FIX
+18.2542
+Banco de México, Interbancario 48 hrs apertura
+Apertura
+18.2635
+18.268
+Banco de México, Interbancario 48 hrs máximo
+Máximo
+18.277
+Banco de México, Interbancario 48 hrs mínimo
+Mínimo
+18.217
+DOF, Diario Oficial de la Federación
+18.4163
+Para pagos de obligaciones
+Para pagos
+18.1128
+SAT, Servicio de Administración Tributaria
+18.4163
+Ve por mas
+17.7482
+18.7632
+n = 10
+18.0205
+18.4515
+18.236
+Anuncios
+Noticias de hoy sobre el dólar
+El Financiero
+Rescate de AHMSA requiere 3 mil mdd y 15 años; ‘el gobierno debe intervenir’: Napoleón Gómez Urrutia
+Napoleón Gómez Urrutia hizo cuentas de cuánto dinero se requiere para el rescate de Altos Hornos de México (AHMSA) y pide que la presidenta Claudia Sheinbaum actúe en favor de 20 mil familias.
+El Financiero
+Wall Street abre mixto en espera de reportes corporativos en EU: ¿Cómo operan sus acciones?
+En Wall Street, el Dow Jones reporta un aumento de 0.43 por ciento, alcanzando los 51 mil 876.16 puntos.
+El Financiero
+‘Día de la Raza’ empuja al peso y se recupera: ¿Cuánto gana frente al dólar HOY 12 de octubre?
+El peso recupera terreno ante el dólar, esto luego de haber cerrado en su nivel máximo del año la semana pasada.
+El Financiero
+Nobel de Economía 2026: Premian a estadounidenses por modelo que enfrenta crisis económica e inflación
+Los economistas estadounidenses Robert E. Hall y Michael Woodford fueron galardonados por el Nobel de Economía 2026, otorgado por la Real Academia Sueca de Ciencias.
+El Financiero
+Una llamada de 30,000 millones de dólares
+Como acostumbra, la presidenta Sheinbaum evitó dar detalles sobre la conversación telefónica que sostuvo con Trump el 16 de septiembre y que confirmó haber realizado después de que Politico publicó la noticia en su portal.
+El Financiero
+Erosión del carry trade le pega al peso mexicano: Diferencial de tasas entre México y EU dispara al dólar
+Impacta caída en el diferencial de tasas entre EU y México que está en mínimos.
+Los derechos del contenido de los enlace gráfico social son de sus publicadores, permitidos via
+Open Graph.
+n = 6
+Anuncios
+Actualizado con información pública cada 7 minutos.Las cantidades son datos de referencia solamente.La divisa dólar expresada es el '
+US
+Dollar' con el codigo
+ISO
+4217
+alfabético '
+USD
+' y el numerico '840'.La divisa peso expresada es el 'Mexican New Peso' con el codigo
+ISO
+4217
+alfabético '
+MXN
+' y el numerico '484'.20261012144743233
+Calculadora
+Multiplica
+Compra
+Venta
+Convertir
+Enviar comentarios
+English
+Español - México - No acentuado
+Español - México
+Logotipos pertenecen exclusivamente a sus dueños. Android, Google Play y el logotipo de Google Play son marcas comerciales de Google Inc.
+if (typeof chrome !== 'undefined' && typeof chrome.webstore !== 'undefined' && typeof chrome.webstore.install !== 'undefined') { var xmlHttp = new XMLHttpRequest(); xmlHttp.open('HEAD', 'chrome-extension://pcefiflbocgphbdagmllhbefmilbggpn/installed.js', true); xmlHttp.timeout = 777; xmlHttp.onreadystatechange = function () { if (xmlHttp.readyState === 4 && xmlHttp.status !== 200) { $doc.getElementById('addToChrome').style.display = 'initial'; } }; xmlHttp.send(); } function addToChrome(){ chrome.webstore.install('https://chrome.google.com/webstore/detail/pcefiflbocgphbdagmllhbefmilbggpn' ,function () {location.reload(false);} ,function (error) {alert('Disculpe, no se pudo instalar.\nPodria volverlo a intentarlo.\n\n' + error);} ); }
