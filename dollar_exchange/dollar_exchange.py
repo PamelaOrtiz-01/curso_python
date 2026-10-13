@@ -50,16 +50,21 @@ def get_dollar_exchange_rate(content:str):
                 price_list.append((bank_name, sell_price, buy_price))
         return price_list
         
-    
 def main(args):
     """Main function to scrap the web page and save the content to a file."""
     url = args.url
     output_file = args.output_file
+    
     try:
-        content = scrap_web_page(url)
-        with open(output_file, 'w', encoding='utf-8') as f:
-            f.write(content)
-        print(f"Web page content saved to {output_file}")
+        #is url an url or a file path?
+        if os.path.exists(url):
+            content = read_file(url)
+        else:
+            content = scrap_web_page(url)
+            write_file(output_file, content)
+        #with open(output_file, 'w', encoding='utf-8') as f:
+        #    f.write(content)
+        #print(f"Web page content saved to {output_file}")
         price_list = get_dollar_exchange_rate(content)
         if price_list:
             print("Dollar Exchange Rates:")
@@ -71,6 +76,7 @@ def main(args):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Scrap a web page and save its content to a file.")
     parser.add_argument("url", type=str, help="The URL of the web page to scrap.")
-    parser.add_argument("output_file", type=str, help="The output file to save the content.")
+    # make output_file optional, if not provided, use 'output.html' as default
+    parser.add_argument("output_file", type=str, nargs='?', default='output.html', help="The output file to save the content. Default is 'output.html'.")
     args = parser.parse_args()
     main(args)
