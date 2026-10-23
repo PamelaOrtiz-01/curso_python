@@ -1,4 +1,4 @@
-star_id,created_at,stage_name,real_name,date_of_birth,place_of_birth,image_url,username
+id,created_at,stage_name,real_name,date_of_birth,place_of_birth,image_url,username
 1,2026-10-28 17:11:00,Mark Hamill,Mark Richard Hamill,1951-09-25,"Oakland, California",https://decine21.com/img/upload/perfiles/mark-hamill-14817/mark-hamill-14817-c.jpg,fcirettg
 2,2026-10-29 17:11:00,Carrie Fisher,Carrie Frances Fisher,1956-10-21,"Burbank, California",https://m.media-amazon.com/images/M/MV5BMTY3YWY0YjAtY2Y5OS00OTQxLWE4NGQtZDA3NDU0YTVlZDMxXkEyXkFqcGc@._V1_.jpg,fcirettg
 3,2026-10-30 17:11:00,Harrison Ford,Harrison Ford,1942-07-13,"Chicago, Illinois",https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Harrison_Ford_by_Gage_Skidmore_3.jpg/440px-Harrison_Ford_by_Gage_Skidmore_3.jpg,fcirettg
