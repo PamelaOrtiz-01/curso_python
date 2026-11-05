@@ -31,4 +31,4 @@ if __name__ == "__main__":
     print("Connections Data:", connections_data['1'])
     
     stars_by_name = create_new_dictionary(stars_data, 'stage_name')
-    print("Stars by Stage Name:", stars_by_name['Carrie Fisher'])
+    print("Stars by Stage Name:", stars_by_name['Carrie'])

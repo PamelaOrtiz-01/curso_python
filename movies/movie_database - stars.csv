@@ -7,7 +7,7 @@ id,created_at,stage_name,real_name,date_of_birth,place_of_birth,image_url,userna
 6,2026-11-02 17:11:00,Ryan Gosling,Ryan Thomas Gosling,1980-11-12,"London, Canada",https://www.google.com/url?sa=t&source=web&rct=j&url=https%3A%2F%2Fes.wikipedia.org%2Fwiki%2FRyan_Gosling&ved=0CBcQjRxqFwoTCMjvwpivzJcDFQAAAAAdAAAAABA3&opi=89978449,senna
 7,2026-11-03 17:11:00,matthew lilard,Matthew Lyn Lillard,1970-01-24,"Lansing, Michigan",https://www.google.com/url?sa=t&source=web&rct=j&url=https%3A%2F%2Fes.wikipedia.org%2Fwiki%2FMatthew_Lillard&ved=0CBcQjRxqFwoTCMDk_8avzJcDFQAAAAAdAAAAABBS&opi=89978449,senna
 8,2026-11-04 17:11:00,Elijah Wood,Elijah Jordan Wood,1981-01-28,"Cedar Rapids, Iowa",https://www.imdb.com/es/name/nm0000704/mediaviewer/rm2331620608/?ref_=nm_ov_ph,puppet
-9,2026-11-05 17:11:00,Mia Masikowska,Mia Wasikowska,1989-10-25,"Canberra, Australia",https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Mia_Wasikowska_by_Gage_Skidmore.jpg/250px-Mia_Wasikowska_by_Gage_Skidmore.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail,puppet
+9,2026-11-05 17:11:00,Mia Wasikowska,Mia Wasikowska,1989-10-25,"Canberra, Australia",https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Mia_Wasikowska_by_Gage_Skidmore.jpg/250px-Mia_Wasikowska_by_Gage_Skidmore.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail,puppet
 10,2026-11-06 17:11:00,Damian Chapa,Damian Robert Chapa,1963-10-29,"Dayton, Ohio",https://es.wikipedia.org/wiki/Damian_Chapa,puppet
 11,2026-11-07 17:11:00,Raymond Cruz,Raymond Cruz,1964-09-10,"Los Angeles, California",https://www.imdb.com/es-es/name/nm0190441/bio/,puppet
 12,2026-11-08 17:11:00,Danny Trejo,Dan Trejo,1944-05-16,"Los Angeles, California",https://www.imdb.com/es/name/nm0001803/,puppet
