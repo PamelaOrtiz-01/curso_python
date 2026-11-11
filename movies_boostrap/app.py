@@ -1,6 +1,6 @@
 """ A simple movie database application """
 
-from flask import Flask, render_template 
+from flask import Flask, redirect, render_template, request, session, url_for
 import movies_sqlite as db
 
 app = Flask(__name__) 
@@ -68,6 +68,20 @@ def star_detail(star_id):
     db.close_database(conn)
     #print(related_movies)  # Debugging line
     return render_template('star_detail.html', rows=rows, movies=related_movies)
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    """ Route to handle user login """
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        valid_user = db.user_login(db.open_database('movies.db'), username, password)
+        if valid_user:
+            session['logged_in'] = True
+            session['username'] = username
+            return redirect(url_for('index'))
+        return render_template('login.html', error='Invalid username or password')
+    return render_template('login.html')
 
 if __name__ == '__main__':
     app.run(debug=True) 
