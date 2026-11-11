@@ -75,6 +75,14 @@ def show_rows(rows: list):
     df = pd.DataFrame(rows)
     print(df)
 
+def user_login(conn, username: str, password: str) -> bool:
+    """ Check if the provided username and password match a user in the database """
+    cur = conn.cursor()
+    cur.execute("SELECT * FROM users WHERE username = ? AND password = ?", 
+                (username, password))
+    user = cur.fetchone()
+    return user is not None
+
 def close_database(conn):
     """ Close the database connection """
     conn.close()
