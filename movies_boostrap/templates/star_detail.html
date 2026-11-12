@@ -10,7 +10,7 @@
                             <img
                                 src="{{ star.image_url }}"
                                 class="img-fluid rounded-start h-100 w-100 object-fit-cover"
-                                alt="{{ star.stage_name }} image"
+                                alt="{{ star.stage_name }} poster"
                             >
                         {% else %}
                             <div class="h-100 d-flex align-items-center justify-content-center p-4 text-body-secondary">
@@ -22,17 +22,21 @@
                         <div class="card-body">
                             <h2 class="card-title">{{ star.stage_name }}</h2>
                             <p class="card-text">
-                                <strong>Date of birth:</strong> {{ star.date_of_birth }}
+                                <strong>Release Date:</strong> {{ star.date_of_birth }}
                             </p>
-                            <h3 class="h5">Stars in</h3>
+                            <p>
+                                <strong>Birth Place:</strong> {{ star.place_of_birth }}
+                            </p>
+                            <h3 class="h5">Movies</h3>
                             <ul class="mb-0">
                                 {% for movie in movies %}
                                     <li>
-                                        {{ star.role }} -
-                                        <a href="{{ url_for('movie_detail', movie_id=movie.id) }}">{{ movie.movie_title }}</a>
+                                        <a href="{{ url_for('movie_detail', movie_id=movie.id) }}">
+                                        {{ movie.movie_title }}
+                                    </a> - {{ movie.role }}
                                     </li>
                                 {% else %}
-                                    <li>No movies listed.</li>
+                                    <li>No stars listed.</li>
                                 {% endfor %}
                             </ul>
                         </div>
@@ -40,8 +44,10 @@
                 </div>
             </article>
         {% else %}
-            <p>Star not found.</p>
+            <p>Movie not found.</p>
         {% endfor %}
-        <a href="{{ url_for('stars') }}">Back to Stars</a>
+        <a href="{{ url_for('movies') }}">Back to Movies</a>
     </main>
 {% endblock %}
+
+
