@@ -50,11 +50,7 @@ def insert_data(conn, table_name: str, data: dict):
         print(f"Error inserting data into {table_name}: {e}")
     except Exception as e:
         print(f"Unexpected error: {e}")
-
-    sql = create_insert_statement(table_name, data)
-    cur = conn.cursor()
-    cur.execute(sql, tuple(data.values()))
-    conn.commit()
+        
 
 def load_csv_to_database(conn, table_name: str, csv_file_path: str):
     """ Load data from a CSV file and insert it into the specified table in the database """
